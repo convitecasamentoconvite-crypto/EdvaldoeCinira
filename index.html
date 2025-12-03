@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Celebração de Casamento</title>
-  <script src="/_sdk/data_sdk.js"></script>
-  <script src="/_sdk/element_sdk.js"></script>
+ 
   <style>
     body {
       box-sizing: border-box;
@@ -46,20 +45,27 @@
     }
 
     .hero {
-      height: 100%;
-      min-height: 600px;
-      background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)), 
-                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="floral" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="2" fill="%23c9a961" opacity="0.1"/><circle cx="150" cy="100" r="2" fill="%236b7c59" opacity="0.1"/><circle cx="100" cy="150" r="2" fill="%23c9a961" opacity="0.1"/></pattern></defs><rect width="1200" height="800" fill="url(%23floral)"/></svg>');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      position: relative;
-    }
+            /* AJUSTE ESTE CAMINHO SE NECESSÁRIO! */
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('./assets/cinira-edvaldo-foto-inicial.png');
+
+            background-size: cover;          /* Garante que a imagem cobre todo o elemento */
+            background-position: center;     /* Centraliza a imagem */
+            background-repeat: no-repeat;    /* Impede a repetição */
+            
+            filter: grayscale(50%); 
+            
+            min-height: 80vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            
+        }
 
     .hero-image {
       width: 280px;
@@ -81,22 +87,27 @@
       opacity: 0.3;
     }
 
-    .hero h1 {
-      font-size: 48px;
-      color: #6b7c59;
-      margin: 0 0 20px 0;
-      font-weight: 400;
-      letter-spacing: 2px;
-      font-family: 'Playfair Display', serif;
-    }
+   .hero h1 {
+    font-size: 64px; /* Mais imponente */
+    color: #FFFFFF; /* Branco puro para contraste máximo */
+    margin: 0 0 20px 0;
+    font-weight: 700; /* Mais peso para aparecer */
+    letter-spacing: 5px; /* Espaçamento amplo para luxo */
+    font-family: 'Playfair Display', serif;
+    /* Sombra sutil para destacar o texto sobre o fundo */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
 
-    .hero p {
-      font-size: 18px;
-      color: #8a8a8a;
-      max-width: 600px;
-      line-height: 1.6;
-      font-style: italic;
-    }
+.hero p {
+    font-size: 24px; /* Mais fácil de ler */
+    color: #F0F0F0; /* Quase branco, mas não tão duro quanto o H1 */
+    max-width: 600px;
+    line-height: 1.8; /* Mais espaçamento para elegância */
+    font-style: italic;
+    font-weight: 300; /* Leve para manter a elegância */
+    /* Sombra sutil para destacar o texto sobre o fundo */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
 
     .divider {
       width: 80px;
@@ -129,6 +140,61 @@
       max-width: 700px;
       margin: 0 auto;
     }
+    
+  .section1 {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      background:linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)), url(./assets/fundo2.png);
+      filter: grayscale(50%);
+    }
+
+    .section1-title {
+      font-size: 36px;
+      color: #6b7c59;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .section1-content {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #666;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .section2 {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      background:linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)), url(./assets/fundo2.png);
+      filter: grayscale(50%);
+    }
+
+    .section2-title {
+      font-size: 36px;
+      color: #6b7c59;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .section2-content {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #666;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
 
     .ceremony-details {
       background: white;
@@ -183,70 +249,72 @@
       line-height: 1.6;
     }
 
-    .gifts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .gift-card {
-      background: white;
-      border-radius: 15px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-    }
-
-    .gift-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    }
-
-    .gift-icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, #f5f0eb 0%, #ffffff 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-    }
-
-    .gift-icon svg {
-      width: 30px;
-      height: 30px;
-      fill: #c9a961;
-    }
-
-    .gift-card h3 {
-      font-size: 20px;
-      color: #6b7c59;
-      margin: 0 0 10px 0;
-    }
-
-    .gift-card p {
-      font-size: 14px;
-      color: #888;
-      margin: 0 0 20px 0;
-    }
-
-    .gift-link {
-      display: inline-block;
-      background: #c9a961;
-      color: white;
-      padding: 10px 24px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: all 0.3s ease;
-    }
-
-    .gift-link:hover {
-      background: #b89850;
-    }
+   .gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+.gift-card {
+    background-color: var(--cor-superficie); /* Branco ou superfície */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.gift-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+.gift-image {
+    width: 100%;
+    height: 150px; /* Altura fixa para a imagem */
+    overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.gift-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+.gift-content {
+    padding: 15px;
+}
+.gift-card h3 {
+    font-size: 1.2em;
+    color: var(--cor-primaria);
+    margin: 10px 0 5px 0;
+}
+.gift-price {
+    display: block;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--cor-acento); /* Cor de destaque (amarelo/ouro) */
+    margin: 5px 0 10px 0;
+}
+.gift-card p {
+    font-size: 0.9em;
+    color: var(--cor-texto);
+    margin-bottom: 15px;
+    min-height: 40px; /* Garante altura mínima para alinhamento */
+}
+.gift-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--cor-primaria);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    width: 90%;
+}
+.gift-link:hover {
+    background-color: #5a6a4c; /* Um tom um pouco mais escuro da cor primária */
+}
 
     .rsvp-form {
       background: white;
@@ -444,16 +512,17 @@
     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#c9a961" />
     </svg>
    </div>
-   <h1 id="titulo-principal">Celebrando o Amor: A Cerimônia de Ana &amp; João</h1>
+   <h1 id="titulo-principal">Celebrando o Amor: A Cerimônia de Cinira &amp; Edvaldo</h1>
    <p id="subtitulo">Já somos casados, mas queremos viver este momento especial com quem amamos</p>
   </div>
   <div class="divider"></div>
   <div class="section">
    <h2 class="section-title">Nossa História</h2>
-   <p class="section-content" id="texto-historia">Já compartilhamos uma vida juntos, construímos nosso lar e oficializamos nosso amor. Mas sempre sonhamos em celebrar esse momento especial ao lado de vocês, nossa família e amigos. Esta cerimônia é a realização desse sonho: renovar nossos votos e compartilhar a alegria do nosso amor com as pessoas que mais importam em nossas vidas.</p>
+   <p class="section-content" id="texto-historia">No dia 31/12/2001 em Queluz, em frente ao quiosque do Edmund, nossos olhares se cruzaram, e à meia noite com a queima de fogos, nos cumprimentamos, e logo depois um beijo roubado. Não nos desgrudamos a madrugada toda. Ele me visitou 2 dias depois, e então marcamos um jantar para o fim de semana, aí o pedido de namoro, tudo muito rápido. O
+namoro durou 2 anos e em 2004, fomos morar juntos, e depois? Tivemos 2 filhas, e agora em 2026 decidimos realizar o nosso sonho, o nosso tão sonhado casamento. E se você está lendo isso é porque você faz parte da nossa história e estamos felizes em compartilhar com você esse momento tão importante para nós. </p>
   </div>
   <div class="divider"></div>
-  <div class="section">
+  <div class="section1">
    <h2 class="section-title">A Cerimônia</h2>
    <div class="ceremony-details">
     <div class="detail-item">
@@ -463,7 +532,7 @@
      </div>
      <div class="detail-text">
       <h3>Data e Horário</h3>
-      <p id="data-cerimonia">15 de Junho de 2024, às 17h</p>
+      <p id="data-cerimonia">23 de maio de 2026 às 16:30h</p>
      </div>
     </div>
     <div class="detail-item">
@@ -473,7 +542,7 @@
      </div>
      <div class="detail-text">
       <h3>Local</h3>
-      <p id="local-cerimonia">Jardim das Flores, Rua das Acácias, 123 - São Paulo, SP</p>
+      <p id="local-cerimonia">Igreja Matriz - Silveiras Pesqueiro no asfalto - Silveiras</p>
      </div>
     </div>
     <div class="detail-item">
@@ -483,327 +552,441 @@
      </div>
      <div class="detail-text">
       <h3>Dress Code</h3>
-      <p id="dress-code">Traje: Esporte Fino - Cores claras e tons pastéis são bem-vindos!</p>
+      <p id="dress-code">Sport Fino (evitar roupas brancas, off white e verdes)</p>
      </div>
     </div>
    </div>
   </div>
   <div class="divider"></div>
   <div class="section">
-   <h2 class="section-title">Lista de Presentes</h2>
-   <p class="section-content" id="texto-presentes">Mais do que presentes, o que mais queremos é celebrar com você! Mas, se quiser nos presentear, aqui estão algumas ideias que nos ajudarão a criar ainda mais memórias juntos.</p>
-   <div class="gifts-grid">
+    <h2 class="section-title">Lista de Presentes</h2>
+    <p class="section-content" id="texto-presentes">Mais do que presentes, o que mais queremos é celebrar com você! Mas, se quiser nos presentear, aqui estão algumas ideias que nos ajudarão a criar ainda mais memórias juntos.</p>
+    <div class="gifts-grid">
+        
+      
+    
     <div class="gift-card">
-     <div class="gift-icon">
-      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" />
-      </svg>
-     </div>
-     <h3>Grana para o Jogo da Vida</h3>
-     <p>Ajude-nos a comprar diversão em família!</p><a href="#" class="gift-link" target="_blank" rel="noopener noreferrer">Contribuir</a>
+        <div class="gift-image">
+            <img src="./assets/jogo-tabuleiro.png" alt="Imagem: Jogos de Tabuleiro">
+        </div>
+        <div class="gift-content">
+            <h3>Grana para o Jogo da Vida</h3>
+            <span class="gift-price">R$ 50,00</span>
+            <p>Ajude-nos a comprar diversão em família!</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Contribuir</a>
+        </div>
     </div>
+
     <div class="gift-card">
-     <div class="gift-icon">
-      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-      </svg>
-     </div>
-     <h3>Vale Espirro em Gramado</h3>
-     <p>Uma experiência inesquecível na serra!</p><a href="#" class="gift-link" target="_blank" rel="noopener noreferrer">Presentear</a>
+        <div class="gift-image">
+            <img src="./assets/gramado.png" alt="Imagem: Gramado, Rio Grande do Sul">
+        </div>
+        <div class="gift-content">
+            <h3>Vale Espirro em Gramado</h3>
+            <span class="gift-price">R$ 150,00</span>
+            <p>Uma experiência inesquecível na serra!</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Presentear</a>
+        </div>
     </div>
+
     <div class="gift-card">
-     <div class="gift-icon">
-      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-      </svg>
-     </div>
-     <h3>Dancinha no TikTok</h3>
-     <p>Grave um TikTok dançando com os noivos!</p><a href="#" class="gift-link" target="_blank" rel="noopener noreferrer">Aceitar Desafio</a>
+        <div class="gift-image">
+            <img src="./assets/midia social e dança.png" alt="Imagem: Mídia Social e Dança">
+        </div>
+        <div class="gift-content">
+            <h3>Dancinha no TikTok</h3>
+            <span class="gift-price">R$ 30,00</span>
+            <p>Grave um TikTok dançando com os noivos!</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Aceitar Desafio</a>
+        </div>
     </div>
+
     <div class="gift-card">
-     <div class="gift-icon">
-      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-      </svg>
-     </div>
-     <h3>+20% Chance no Buquê</h3>
-     <p>Aumente suas chances de pegar o buquê!</p><a href="#" class="gift-link" target="_blank" rel="noopener noreferrer">Garantir Vantagem</a>
+        <div class="gift-image">
+            <img src="./assets/buque.png" alt="Imagem: Buquê de Flores">
+        </div>
+        <div class="gift-content">
+            <h3>+20% Chance no Buquê</h3>
+            <span class="gift-price">R$ 20,00</span>
+            <p>Aumente suas chances de pegar o buquê!</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Garantir Vantagem</a>
+        </div>
     </div>
+    
     <div class="gift-card">
-     <div class="gift-icon">
-      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-      </svg>
-     </div>
-     <h3>Aviãozinho de R$ 100</h3>
-     <p>Contribuição especial para os noivos</p><a href="#" class="gift-link" target="_blank" rel="noopener noreferrer">Enviar Aviãozinho</a>
+        <div class="gift-image">
+            <img src="./assets/aviao-100-reais.png" alt="Imagem: Contribuição em Dinheiro">
+        </div>
+        <div class="gift-content">
+            <h3>Aviãozinho de R$ 100</h3>
+            <span class="gift-price">R$ 100,00</span>
+            <p>Contribuição especial para os noivos</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Enviar Aviãozinho</a>
+        </div>
     </div>
+
     <div class="gift-card">
-     <div class="gift-icon">
-      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z" />
-      </svg>
-     </div>
-     <h3>Cota Lua de Mel</h3>
-     <p>Ajude-nos a realizar nossa viagem dos sonhos</p><a href="#" class="gift-link" target="_blank" rel="noopener noreferrer">Contribuir</a>
+        <div class="gift-image">
+            <img src="./assets/viagem-romantica.png" alt="Imagem: Paisagem de Viagem Romântica">
+        </div>
+        <div class="gift-content">
+            <h3>Cota Lua de Mel</h3>
+            <span class="gift-price">R$ 250,00</span>
+            <p>Ajude-nos a realizar nossa viagem dos sonhos</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Contribuir</a>
+        </div>
     </div>
-   </div>
-  </div>
+
+    <div class="gift-card">
+        <div class="gift-image">
+            <img src="./assets/capinha.png" alt="Imagem: Capinha de Celular para o Noivo">
+        </div>
+        <div class="gift-content">
+            <h3>Capinha de Celular Para o Noivo</h3>
+            <span class="gift-price">R$ 100,00</span>
+            <p>Para proteger o celular do noivo de qualquer imprevisto!</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Presentear</a>
+        </div>
+    </div>
+
+    <div class="gift-card">
+        <div class="gift-image">
+            <img src="./assets/ressaca.png" alt="Imagem: Kit Ressaca Pós Festa">
+        </div>
+        <div class="gift-content">
+            <h3>Kit Ressaca Pós Festa</h3>
+            <span class="gift-price">R$ 120,00</span>
+            <p>Ajuda indispensável para sobreviver ao dia seguinte da celebração.</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Contribuir</a>
+        </div>
+    </div>
+
+    <div class="gift-card">
+        <div class="gift-image">
+            <img src="./assets/Lingerie.png" alt="Imagem: Lingerie para Lua de Mel">
+        </div>
+        <div class="gift-content">
+            <h3>Lingerie pra Lua de Mel</h3>
+            <span class="gift-price">R$ 98,00</span>
+            <p>Um mimo especial para a noite de núpcias e lua de mel.</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Presentear</a>
+        </div>
+    </div>
+
+    <div class="gift-card">
+        <div class="gift-image">
+            <img src="./assets/cueca.png" alt="Imagem: Cueca Sexy para o Noivo">
+        </div>
+        <div class="gift-content">
+            <h3>Cueca Sexy pra Noite de Núpcias</h3>
+            <span class="gift-price">R$ 89,00</span>
+            <p>Para o noivo se sentir à altura da lingerie da noiva!</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Presentear</a>
+        </div>
+    </div>
+
+    <div class="gift-card">
+        <div class="gift-image">
+            <img src="./assets/maquiagem.png" alt="Imagem: Maquiagem da Noiva">
+        </div>
+        <div class="gift-content">
+            <h3>Ajudar a Pagar a Maquiagem da Noiva</h3>
+            <span class="gift-price">R$ 150,00</span>
+            <p>Para a noiva brilhar ainda mais no grande dia!</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Contribuir</a>
+        </div>
+    </div>
+
+    <div class="gift-card">
+        <div class="gift-image">
+            <img src="./assets/cortador.png" alt="Imagem: Cortador de Unha para o Noivo">
+        </div>
+        <div class="gift-content">
+            <h3>Acessório Pra Cortar a Unha do Dedão do Noivo</h3>
+            <span class="gift-price">R$ 312,00</span>
+            <p>Investimento de alto nível na higiene pessoal do noivo.</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Presentear</a>
+        </div>
+    </div>
+
+    <div class="gift-card">
+        <div class="gift-image">
+            <img src="./assets/deserto.png" alt="Imagem: Jantar Romântico">
+        </div>
+        <div class="gift-content">
+            <h3>Jantar no Deserto</h3>
+            <span class="gift-price">R$ 250,00</span>
+            <p>Um jantar romântico em um local exótico e inesquecível.</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Contribuir</a>
+        </div>
+    </div>
+
+    <div class="gift-card">
+        <div class="gift-image">
+            <img src="./assets/vale-massagem.png" alt="Imagem: Vale Massagem para a Noiva">
+        </div>
+        <div class="gift-content">
+            <h3>Vale Massagem pra Noiva</h3>
+            <span class="gift-price">R$ 150,00</span>
+            <p>Para relaxar antes ou depois da correria do casamento.</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Presentear</a>
+        </div>
+    </div>
+
+    <div class="gift-card">
+        <div class="gift-image">
+            <img src="./assets/tampao-ouvido-noiva.png" alt="Imagem: Tampão de Ouvido">
+        </div>
+        <div class="gift-content">
+            <h3>Tampão pra Noiva Não Ouvir o Noivo Roncar</h3>
+            <span class="gift-price">R$ 82,50</span>
+            <p>Paz e sossego garantidos para a noiva todas as noites!</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Presentear</a>
+        </div>
+    </div>
+
+    
+
+    <div class="gift-card">
+        <div class="gift-image">
+            <img src="./assets/lua.png" alt="Imagem: Viagem com Acompanhantes">
+        </div>
+        <div class="gift-content">
+            <h3>Ir pra Lua de Mel com os Noivos</h3>
+            <span class="gift-price">R$ 3.000,00</span>
+            <p>O presente que não tem preço: a companhia de um padrinho/amigo de honra na lua de mel!</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Garantir Vaga</a>
+        </div>
+    </div>
+
+    <div class="gift-card">
+        <div class="gift-image">
+            <img src="./assets/evidencias.png" alt="Imagem: Microfone no Palco">
+        </div>
+        <div class="gift-content">
+            <h3>Liberação Pra Subir no Palco e Cantar Evidências</h3>
+            <span class="gift-price">R$ 160,00</span>
+            <p>Seja a estrela da festa e preste a homenagem máxima aos noivos.</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Garantir Palco</a>
+        </div>
+    </div>
+
+    <div class="gift-card">
+        <div class="gift-image">
+            <img src="./assets/barbearia.png" alt="Imagem: Barbearia para o Noivo">
+        </div>
+        <div class="gift-content">
+            <h3>Um Ano de Barbearia pro Noivo</h3>
+            <span class="gift-price">R$ 180,00</span>
+            <p>Garantia de barba e cabelo sempre impecáveis, cortesia sua!</p>
+            <a href="http://link.mercadopago.com.br/presentecasamen" class="gift-link" target="_blank" rel="noopener noreferrer">Presentear</a>
+        </div>
+    </div>
+</div>
+
+   
+</div>
   <div class="divider"></div>
-  <div class="section" id="rsvp-section">
-   <h2 class="section-title">Confirme sua Presença</h2>
-   <p class="section-content">Sua presença é o nosso maior presente! Por favor, confirme até 30 de Maio.</p>
-   <div class="rsvp-form">
-    <form id="rsvp-form">
-     <div class="form-group"><label for="nome">Nome Completo *</label> <input type="text" id="nome" required placeholder="Seu nome">
-     </div>
-     <div class="form-group"><label for="acompanhantes">Número de Acompanhantes</label> <input type="number" id="acompanhantes" min="0" max="5" value="0" placeholder="0">
-     </div>
-     <div class="form-group"><label for="mensagem">Mensagem para o Casal (opcional)</label> <textarea id="mensagem" placeholder="Deixe uma mensagem carinhosa..."></textarea>
-     </div><button type="submit" class="submit-btn" id="submit-btn"> Confirmar Presença </button>
-    </form>
-    <div class="confirmations-list" id="confirmations-list"></div>
-   </div>
-  </div>
+    <div class="section2" id="rsvp-section">
+        <h2 class="section-title">Confirme sua Presença</h2>
+        <p class="section-content">Sua presença é o nosso maior presente! Por favor, confirme até 30 de Maio.</p>
+        <div class="rsvp-form">
+            <form id="rsvp-form">
+                <div class="form-group">
+                    <label for="nome">Nome Completo *</label> 
+                    <input type="text" id="nome" required placeholder="Seu nome">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email_convidado">Seu E-mail *</label> 
+                    <input type="email" id="email_convidado" required placeholder="seunome@exemplo.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="acompanhantes">Número de Acompanhantes</label> 
+                    <input type="number" id="acompanhantes" min="0" max="5" value="0" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem para o Casal (opcional)</label> 
+                    <textarea id="mensagem" placeholder="Deixe uma mensagem carinhosa."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submit-btn"> Confirmar Presença </button>
+            </form>
+            <div class="confirmations-list" id="confirmations-list"></div>
+        </div>
+    </div>
   <div class="divider"></div>
   <div class="section">
    <h2 class="section-title">Contato</h2>
    <p class="section-content">Ficou com alguma dúvida? Entre em contato conosco!</p>
-   <div class="contact-info"><a href="#" class="contact-item" id="whatsapp-link" target="_blank" rel="noopener noreferrer">
+   <div class="contact-info"><a href="+55 12 99708-2577" class="contact-item" id="whatsapp-link" target="_blank" rel="noopener noreferrer">
      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-     </svg><span id="whatsapp-text">WhatsApp</span> </a> <a href="#" class="contact-item" id="email-link">
+     </svg><span id="whatsapp-text">WhatsApp</span> </a> <a href="edvaldoflores7@gmail.com" class="contact-item" id="email-link">
      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
      </svg><span id="email-text">E-mail</span> </a>
    </div>
   </div>
   <div class="divider"></div>
   <div id="toast" class="toast"></div>
-  <script>
-    const defaultConfig = {
-      titulo_principal: "Celebrando o Amor: A Cerimônia de Ana & João",
-      subtitulo: "Já somos casados, mas queremos viver este momento especial com quem amamos",
-      texto_historia: "Já compartilhamos uma vida juntos, construímos nosso lar e oficializamos nosso amor. Mas sempre sonhamos em celebrar esse momento especial ao lado de vocês, nossa família e amigos. Esta cerimônia é a realização desse sonho: renovar nossos votos e compartilhar a alegria do nosso amor com as pessoas que mais importam em nossas vidas.",
-      data_cerimonia: "15 de Junho de 2024, às 17h",
-      local_cerimonia: "Jardim das Flores, Rua das Acácias, 123 - São Paulo, SP",
-      dress_code: "Traje: Esporte Fino - Cores claras e tons pastéis são bem-vindos!",
-      texto_presentes: "Mais do que presentes, o que mais queremos é celebrar com você! Mas, se quiser nos presentear, aqui estão algumas ideias que nos ajudarão a criar ainda mais memórias juntos.",
-      whatsapp: "+55 11 99999-9999",
-      email: "casal@email.com",
-      background_color: "#f8f6f4",
-      primary_color: "#6b7c59",
-      accent_color: "#c9a961",
-      text_color: "#4a4a4a",
-      surface_color: "#ffffff"
-    };
+  
+ <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    let confirmations = [];
-
-    const dataHandler = {
-      onDataChanged(data) {
-        confirmations = data;
-        renderConfirmations();
-      }
-    };
-
-    async function initApp() {
-      if (window.dataSdk) {
-        const initResult = await window.dataSdk.init(dataHandler);
-        if (!initResult.isOk) {
-          console.error("Erro ao inicializar Data SDK");
-        }
-      }
-
-      if (window.elementSdk) {
-        window.elementSdk.init({
-          defaultConfig,
-          onConfigChange: async (config) => {
-            document.getElementById('titulo-principal').textContent = config.titulo_principal || defaultConfig.titulo_principal;
-            document.getElementById('subtitulo').textContent = config.subtitulo || defaultConfig.subtitulo;
-            document.getElementById('texto-historia').textContent = config.texto_historia || defaultConfig.texto_historia;
-            document.getElementById('data-cerimonia').textContent = config.data_cerimonia || defaultConfig.data_cerimonia;
-            document.getElementById('local-cerimonia').textContent = config.local_cerimonia || defaultConfig.local_cerimonia;
-            document.getElementById('dress-code').textContent = config.dress_code || defaultConfig.dress_code;
-            document.getElementById('texto-presentes').textContent = config.texto_presentes || defaultConfig.texto_presentes;
-            
-            const whatsappNumber = config.whatsapp || defaultConfig.whatsapp;
-            document.getElementById('whatsapp-link').href = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}`;
-            document.getElementById('whatsapp-text').textContent = whatsappNumber;
-            
-            const email = config.email || defaultConfig.email;
-            document.getElementById('email-link').href = `mailto:${email}`;
-            document.getElementById('email-text').textContent = email;
-
-            document.body.style.background = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.surface_color || defaultConfig.surface_color} 100%)`;
-            
-            const titles = document.querySelectorAll('.section-title, .hero h1');
-            titles.forEach(title => {
-              title.style.color = config.primary_color || defaultConfig.primary_color;
-            });
-
-            const accentElements = document.querySelectorAll('.fixed-rsvp, .submit-btn, .gift-link');
-            accentElements.forEach(el => {
-              el.style.background = config.accent_color || defaultConfig.accent_color;
-            });
-
-            document.body.style.color = config.text_color || defaultConfig.text_color;
-          },
-          mapToCapabilities: (config) => ({
-            recolorables: [
-              {
-                get: () => config.background_color || defaultConfig.background_color,
-                set: (value) => {
-                  if (window.elementSdk) {
-                    window.elementSdk.config.background_color = value;
-                    window.elementSdk.setConfig({ background_color: value });
-                  }
-                }
-              },
-              {
-                get: () => config.primary_color || defaultConfig.primary_color,
-                set: (value) => {
-                  if (window.elementSdk) {
-                    window.elementSdk.config.primary_color = value;
-                    window.elementSdk.setConfig({ primary_color: value });
-                  }
-                }
-              },
-              {
-                get: () => config.accent_color || defaultConfig.accent_color,
-                set: (value) => {
-                  if (window.elementSdk) {
-                    window.elementSdk.config.accent_color = value;
-                    window.elementSdk.setConfig({ accent_color: value });
-                  }
-                }
-              },
-              {
-                get: () => config.text_color || defaultConfig.text_color,
-                set: (value) => {
-                  if (window.elementSdk) {
-                    window.elementSdk.config.text_color = value;
-                    window.elementSdk.setConfig({ text_color: value });
-                  }
-                }
-              },
-              {
-                get: () => config.surface_color || defaultConfig.surface_color,
-                set: (value) => {
-                  if (window.elementSdk) {
-                    window.elementSdk.config.surface_color = value;
-                    window.elementSdk.setConfig({ surface_color: value });
-                  }
-                }
-              }
-            ],
-            borderables: [],
-            fontEditable: undefined,
-            fontSizeable: undefined
-          }),
-          mapToEditPanelValues: (config) => new Map([
-            ["titulo_principal", config.titulo_principal || defaultConfig.titulo_principal],
-            ["subtitulo", config.subtitulo || defaultConfig.subtitulo],
-            ["texto_historia", config.texto_historia || defaultConfig.texto_historia],
-            ["data_cerimonia", config.data_cerimonia || defaultConfig.data_cerimonia],
-            ["local_cerimonia", config.local_cerimonia || defaultConfig.local_cerimonia],
-            ["dress_code", config.dress_code || defaultConfig.dress_code],
-            ["texto_presentes", config.texto_presentes || defaultConfig.texto_presentes],
-            ["whatsapp", config.whatsapp || defaultConfig.whatsapp],
-            ["email", config.email || defaultConfig.email]
-          ])
-        });
-      }
-    }
-
-    function renderConfirmations() {
-      const container = document.getElementById('confirmations-list');
-      
-      if (confirmations.length === 0) {
-        container.innerHTML = '';
-        return;
-      }
-
-      const existingItems = new Map(
-        [...container.children].map(el => [el.dataset.confirmationId, el])
-      );
-
-      confirmations.forEach(confirmation => {
-        if (existingItems.has(confirmation.__backendId)) {
-          const element = existingItems.get(confirmation.__backendId);
-          element.querySelector('h4').textContent = confirmation.nome;
-          element.querySelector('.acompanhantes').textContent = 
-            `Acompanhantes: ${confirmation.acompanhantes || 0}`;
-          const mensagemEl = element.querySelector('.mensagem');
-          if (confirmation.mensagem) {
-            mensagemEl.textContent = `"${confirmation.mensagem}"`;
-            mensagemEl.style.display = 'block';
-          } else {
-            mensagemEl.style.display = 'none';
-          }
-          existingItems.delete(confirmation.__backendId);
-        } else {
-          const item = document.createElement('div');
-          item.className = 'confirmation-item';
-          item.dataset.confirmationId = confirmation.__backendId;
-          item.innerHTML = `
-            <h4>${confirmation.nome}</h4>
-            <p class="acompanhantes">Acompanhantes: ${confirmation.acompanhantes || 0}</p>
-            ${confirmation.mensagem ? `<p class="mensagem">"${confirmation.mensagem}"</p>` : '<p class="mensagem" style="display:none;"></p>'}
-          `;
-          container.appendChild(item);
-        }
+<script type="text/javascript">
+   (function(){
+      // Note a mudança: agora é um objeto com 'publicKey'
+      emailjs.init({ 
+        publicKey: "L_4ZBvGgqQpFNs-sE", 
       });
+   })();
+</script>
 
-      existingItems.forEach(el => el.remove());
-    }
 
+
+  <script>
+    // **PASSO 1: CONFIGURAÇÕES GLOBAIS**
+    const defaultConfig = {
+        titulo_principal: "Celebrando o Amor: A Cerimônia de Cinira & Edvaldo",
+        subtitulo: "Já somos casados, mas queremos viver este momento especial com quem amamos",
+        texto_historia: "No dia 31/12/2001 em Queluz, em frente ao quiosque do Edmund, nossos olhares se cruzaram, e à meia noite com a queima de fogos, nos cumprimentamos, e logo depois um beijo roubado. Não nos desgrudamos a madrugada toda. Ele me visitou 2 dias depois, e então marcamos um jantar para o fim de semana, aí o pedido de namoro, tudo muito rápido. O namoro durou 2 anos e em 2004, fomos morar juntos, e depois? Tivemos 2 filhas, e agora em 2026 decidimos realizar o nosso sonho, o nosso tão sonhado casamento. E se você está lendo isso é porque você faz parte da nossa história e estamos felizes em compartilhar com você esse momento tão importante para nós. ",
+        data_cerimonia: "23 de maio de 2026 às 16:30h",
+        local_cerimonia: "Igreja Matriz - Silveiras Pesqueiro no asfalto - Silveiras",
+        dress_code: "Sport Fino (evitar roupas brancas, off white e verdes)",
+        texto_presentes: "Mais do que presentes, o que mais queremos é celebrar com você! Mas, se quiser nos presentear, aqui estão algumas ideias que nos ajudarão a criar ainda mais memórias juntos.",
+        whatsapp: "+55 12 99708-2577",
+        email: "fussansa@gmail.com", // << E-MAIL DESTINATÁRIO (ORGANIZADORA)
+        background_color: "#f8f6f4",
+        primary_color: "#6b7c59",
+        accent_color: "#c9a961",
+        text_color: "#4a4a4a",
+        surface_color: "#ffffff"
+    };
+    
+    // Funções utilitárias (mantidas)
     function showToast(message) {
-      const toast = document.getElementById('toast');
-      toast.textContent = message;
-      toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3000);
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
     }
 
     function scrollToRSVP() {
-      document.getElementById('rsvp-section').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('rsvp-section').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    function renderConfirmationsMessage() {
+        const container = document.getElementById('confirmations-list');
+        if (container) {
+            container.innerHTML = '<p style="font-style: italic; color: #aaa; text-align: center;">As confirmações de presença são enviadas diretamente para o e-mail da organização.</p>';
+        }
     }
 
-    document.getElementById('rsvp-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      if (confirmations.length >= 999) {
-        showToast('Limite de confirmações atingido. Entre em contato conosco diretamente.');
-        return;
-      }
-
-      const submitBtn = document.getElementById('submit-btn');
-      const originalText = submitBtn.textContent;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="loading-spinner"></span>Enviando...';
-
-      const nome = document.getElementById('nome').value;
-      const acompanhantes = parseInt(document.getElementById('acompanhantes').value) || 0;
-      const mensagem = document.getElementById('mensagem').value;
-
-      const confirmation = {
-        id: Date.now().toString(),
-        nome,
-        acompanhantes,
-        mensagem,
-        data_confirmacao: new Date().toISOString()
-      };
-
-      if (window.dataSdk) {
-        const result = await window.dataSdk.create(confirmation);
+    async function initApp() {
+        // Aplica textos e cores
+        document.getElementById('titulo-principal').textContent = defaultConfig.titulo_principal;
+        document.getElementById('subtitulo').textContent = defaultConfig.subtitulo;
+        document.getElementById('texto-historia').textContent = defaultConfig.texto_historia;
+        document.getElementById('data-cerimonia').textContent = defaultConfig.data_cerimonia;
+        document.getElementById('local-cerimonia').textContent = defaultConfig.local_cerimonia;
+        document.getElementById('dress-code').textContent = defaultConfig.dress_code;
+        document.getElementById('texto-presentes').textContent = defaultConfig.texto_presentes;
         
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
+        const whatsappNumber = defaultConfig.whatsapp;
+        document.getElementById('whatsapp-link').href = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}`;
+        document.getElementById('whatsapp-text').textContent = whatsappNumber;
+        
+        const email = defaultConfig.email;
+        document.getElementById('email-link').href = `mailto:${email}`;
+        document.getElementById('email-text').textContent = email;
 
-        if (result.isOk) {
-          showToast('Presença confirmada com sucesso! 💚');
-          document.getElementById('rsvp-form').reset();
-        } else {
-          showToast('Erro ao confirmar presença. Tente novamente.');
+        document.body.style.setProperty('--cor-fundo-claro', defaultConfig.background_color);
+        document.body.style.setProperty('--cor-superficie', defaultConfig.surface_color);
+        document.body.style.setProperty('--cor-primaria', defaultConfig.primary_color);
+        document.body.style.setProperty('--cor-acento', defaultConfig.accent_color);
+        document.body.style.setProperty('--cor-texto', defaultConfig.text_color);
+
+        document.body.style.background = `linear-gradient(135deg, ${defaultConfig.background_color} 0%, ${defaultConfig.surface_color} 100%)`;
+        
+        renderConfirmationsMessage();
+    }
+
+
+    // **FUNÇÃO DE SUBMISSÃO (SEPARADA)**
+    async function handleFormSubmit(e) {
+        e.preventDefault();
+
+        const submitBtn = document.getElementById('submit-btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="loading-spinner"></span>Enviando...';
+
+        // Coleta os dados do formulário
+        const nome = document.getElementById('nome').value;
+        const emailConvidado = document.getElementById('email_convidado').value;
+        const acompanhantes = parseInt(document.getElementById('acompanhantes').value) || 0;
+        const mensagem = document.getElementById('mensagem').value;
+
+        // Objeto que será enviado ao Template do EmailJS
+        const emailParams = {
+            nome: nome, 
+            acompanhantes: acompanhantes,
+            mensagem: mensagem,
+            email_convidado: emailConvidado,
+            // DESTINATÁRIO (ORGANIZADORA)
+            email_destino: defaultConfig.email 
+        };
+        
+        // **DISPARAR O E-MAIL: IDS DO EMAILJS**
+        emailjs.send(
+            'service_pw1e688',   // Service ID
+            'template_swsv0w8',  // Template ID
+            emailParams
+        )
+        .then((response) => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+
+            if (response.status === 200) {
+                showToast('Presença confirmada! O seu RSVP foi enviado para o casal. 💚');
+                document.getElementById('rsvp-form').reset();
+            } else {
+                showToast('Erro ao enviar e-mail. Tente novamente.');
+            }
+        }, (error) => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+            console.error('EmailJS Error:', error);
+            showToast('Erro de comunicação. Verifique a configuração do EmailJS.');
+        });
+    }
+
+    // **INICIALIZAÇÃO SEGURA (ESPERA O CARREGAMENTO COMPLETO)**
+    window.onload = function() {
+        try {
+            // Tenta inicializar o EmailJS (User ID)
+            emailjs.init("L_4ZBvGgqQpFNs-sE");
+            
+            // Inicializa a customização da página
+            initApp();
+            
+            // Adiciona o evento de submissão APENAS se o EmailJS for carregado
+            const form = document.getElementById('rsvp-form');
+            if (form) {
+                 form.addEventListener('submit', handleFormSubmit);
+            }
+        } catch (error) {
+            console.error("ERRO CRÍTICO: Não foi possível inicializar o EmailJS. (A biblioteca pode estar bloqueada ou ausente).", error);
+            const submitBtn = document.getElementById('submit-btn');
+            if (submitBtn) {
+                submitBtn.textContent = 'Erro no sistema de RSVP. Tente mais tarde.';
+                submitBtn.disabled = true;
+            }
         }
-      }
-    });
-
-    initApp();
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a7cd60fa48bf62a',t:'MTc2NDY5OTYwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    };
+</script>
+      
+    
+  </body>
 </html>
